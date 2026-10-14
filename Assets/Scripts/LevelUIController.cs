@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelUIController : MonoBehaviour
 {
@@ -15,5 +16,23 @@ public class LevelUIController : MonoBehaviour
         LivesLabel.text = "Lives: " + lives;
         ScoreLabel.text = "Score: " + score;
         TimeLabel.text = "Time: " + totalTime.ToString(format:"0.0###")+"s";
+    }
+
+    public void Kill()
+    {
+        lives--;
+        if (lives == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+    }
+
+    public void Collect()
+    {
+        score++;
+        if (score == 100)
+        {
+            lives++;
+        }
     }
 }

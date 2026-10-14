@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isGrounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x * inGroundDumping, rb.linearVelocity.x);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x * inGroundDumping, rb.linearVelocity.y);
         }
     }
 
